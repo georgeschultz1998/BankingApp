@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!-- Include any additional stylesheets or scripts here -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,700">
+  <!-- Additional head content, if any -->
+  <% if (typeof headContent !== 'undefined') { %>
+    <%= headContent %>
+  <% } %>
+</head>
+<body>
+  <!-- Include header -->
+  <%- include('_header.ejs') %>
+
+  <!-- Main content -->
+  <main class="main">
+    <%- body %>
+  </main>
+
+  <!-- Include footer -->
+  <%- include('_footer.ejs') %>
+  
+  <!-- Additional scripts, if any -->
+  <% if (typeof scripts !== 'undefined') { %>
+    <%= scripts %>
+  <% } %>
+</body>
+</html>

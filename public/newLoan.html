@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>New Loan Application | BankPro</title>
+  </head>
+  <body>
+
+    <main class="main">
+      <div class="card-container">
+        <div class="card">
+          <div class="card__details">
+            <h4 class="card__sub-heading">New Loan Application</h4>
+            <p class="card__text">
+              Please enter the following details to apply for a loan.
+            </p>
+            <div class="card__data">    
+              <form action="/newLoan">
+                <label for="loanType">Loan Type:</label>
+                <input type="text" id="loanType" name="loanType"><br><br>
+                <label for="applicantName">Applicant Name:</label>
+                <input type="text" id="applicantName" name="applicantName"><br><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description"><br><br>
+                <label for="loanAmount">Loan Amount:</label>
+                <input type="number" id="loanAmount" name="loanAmount"><br><br>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate"><br><br>
+                <input class="card__sub-heading" type="submit" value="Submit">
+              </form>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

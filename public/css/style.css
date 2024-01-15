@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #B28D67;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header__logo img {
+    height: 40px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__el {
+    color: #ffffff;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  .nav__user-img {
+    border-radius: 50%;
+    height: 30px;
+    margin-left: 10px;
+  }
+  
+  /* Main content styles */
+  .main {
+    padding: 20px;
+  }
+  
+  .card-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card__header {
+    text-align: center;
+  }
+  
+  .card__sub-heading {
+    font-weight: bold;
+  }
+  
+  .card__text {
+    margin-bottom: 20px;
+  }
+  
+  .card__data input[type="text"],
+  .card__data input[type="email"],
+  .card__data input[type="password"],
+  .card__data select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .card__data input[type="submit"] {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: #B28D67;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .footer__logo img {
+    height: 40px;
+  }
+  
+  .footer__nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .footer__nav li {
+    margin: 0 10px;
+  }
+  
+  .footer__nav a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer__copyright {
+    margin-top: 10px;
+  }
+  

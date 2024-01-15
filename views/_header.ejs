@@ -1,0 +1,39 @@
+<!-- 
+  Author: Anthony Schultz
+  Date: 4/28/23
+  Description: This file defines the header component, which includes bank navigation
+  and user navigation. The content of the navigation is conditionally rendered based
+  on the user's role (admin, staff, or user) and authentication status.
+-->
+<header class="header">
+  <nav class="nav nav--bank">
+    <% if (typeof name !== 'undefined' && name) { %>
+      <% if (role === 'admin') { %>
+        <a class="nav__el" href="/alluserlists">All userlists</a>
+      <% } %>
+      <% if (role === 'admin' || role === 'staff') { %>
+        <a class="nav__el" href="/allloanlists">All loanlists</a>
+        <a class="nav__el" href="/newloan">Create new loan</a>
+        <% } %>
+      <% if (role === 'user') { %>
+        <a class="nav__el" href="/myloanlists">My loanLists</a>
+      <% } %>
+      
+    <% } %>
+  </nav>
+  <div class="header__logo">
+    <img src="/img/logo.png" alt="BankPro logo" />
+  </div>
+  <nav class="nav nav--user">
+    <% if (typeof name !== 'undefined' && name) { %>
+      <a class="nav__el nav__el" href="/logout">Log out</a>
+    <% } else { %>
+      <a class="nav__el nav__el" href="/login">Login</a>
+      <a class="nav__el nav__el" href="/signup">Sign Up</a>
+    <% } %>
+    <a class="nav__el" href="/">
+      <img class="nav__user-img" src="/img/users/user.png" alt="User photo" />
+      <%= typeof name !== 'undefined' ? name : '' %>
+    </a>
+  </nav>
+</header>

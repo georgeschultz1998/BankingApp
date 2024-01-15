@@ -1,0 +1,43 @@
+<!-- 
+  Author: Anthony Schultz
+  Date: 4/28/23
+  Description: This file defines the "Loan Lists Overview" page, which displays a table of loans
+  in the system. The table includes details such as name, loan type, loan number, amount, interest rate,
+  loan term years, and calculated loan amount.
+-->
+
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">Loan Lists Overview</h1>
+  <div class="table-container">
+    <table class="table-header">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Loan Type</th>
+          <th scope="col">Loan Number</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Interest Rate/%</th>
+          <th scope="col">Loan Term Years</th>
+          <th scope="col">Calculated Loan Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% loans.forEach((loan) { %>
+          <tr class="table-secondary">
+            <td><%= loan.name %></td>
+            <td><%= loan.loanType %></td>
+            <td><%= loan.loanNumber %></td>
+            <td><%= loan.Amount %></td>
+            <td><%= Math.round(loan.interestRate * 100) %></td>
+            <td><%= loan.loanTermYears %></td>
+            <td><%= loan.calculatedLoanAmount %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'Loan Lists', body: content }) %>

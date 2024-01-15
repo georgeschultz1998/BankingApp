@@ -1,0 +1,37 @@
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">My Loan Lists</h1>
+  <table class="table-header">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Loan Type</th>
+        <th scope="col">Loan Number</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Interest Rate/%</th>
+        <th scope="col">Loan Term Years</th>
+        <th scope="col">Calculated Loan Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      ` + (loans && loans.length > 0 ? `
+        <tr class="table-secondary">
+          <td>${loans[0].name}</td>
+          <td>${loans[0].loanType}</td>
+          <td>${loans[0].loanNumber}</td>
+          <td>${loans[0].Amount}</td>
+          <td>${Math.round(loans[0].interestRate * 100)}</td>
+          <td>${loans[0].loanTermYears}</td>
+          <td>${loans[0].calculatedLoanAmount}</td>
+        </tr>
+        ` : `
+        <tr>
+          <td colspan="7" class="text-center">No loans found.</td>
+        </tr>
+        `) + `
+    </tbody>
+  </table>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'My Loan Lists', body: content }) %>

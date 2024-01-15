@@ -1,0 +1,28 @@
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">Welcome to BankPro</h1>
+  <p class="overview__text">
+    BankPro is your trusted financial partner, offering a wide range of banking and financial services to meet your needs. Whether you're looking for personal banking, business banking, loans, or investment services, we're here to help.
+  </p>
+  <div class="overview__services">
+    <div class="service-card">
+      <h3 class="service-card__title">Personal Banking</h3>
+      <p class="service-card__text">Manage your finances with our comprehensive personal banking solutions.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="service-card__title">Business Banking</h3>
+      <p class="service-card__text">Grow your business with our tailored banking services for businesses of all sizes.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="service-card__title">Loans & Mortgages</h3>
+      <p class="service-card__text">Achieve your financial goals with our flexible loan and mortgage options.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="service-card__title">Investment Services</h3>
+      <p class="service-card__text">Maximize your wealth with our investment products and expert advice.</p>
+    </div>
+  </div>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'BankPro - Overview', body: content }) %>

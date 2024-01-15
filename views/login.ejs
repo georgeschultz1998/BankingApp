@@ -1,0 +1,33 @@
+<!-- 
+  Author: Anthony Schultz
+  Date: 4/28/23
+  Description: This file defines the "Login" page, which includes a form for users to enter
+  their email and password to log in to the system. The form is enclosed within a styled card.
+-->
+
+<% var content = `
+<div class="container">
+  <div class="card-container">
+    <div class="card">
+      <div class="card__header"></div>
+      <div class="card__details">
+        <h4 class="card__sub-heading">Login</h4>
+        <p class="card__text">
+          Please enter the following details
+        </p>
+        <div class="card__data">
+          <form action="/api/v1/users/login" method="post">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input class="card__sub-heading" type="submit" value="Log In">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'Login', body: content }) %>

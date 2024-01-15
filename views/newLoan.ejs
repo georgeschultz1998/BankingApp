@@ -1,0 +1,41 @@
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">Create New Loan</h1>
+  <div class="card-container">
+    <div class="card">
+      <div class="card__header">
+        <h3 class="heading-tertiary">New Loan Information</h3>
+      </div>
+      <div class="card__details">
+        <p class="card__text">Please enter the following details:</p>
+        <div class="card__data">
+          <form action="/api/v1/loans/" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="loanType">Loan Type:</label>
+            <select id="loanType" name="loanType" required>
+              <option value="Home">Home</option>
+              <option value="Auto">Auto</option>
+              <option value="Boat">Boat</option>
+              <option value="Life">Life</option>
+            </select><br><br>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required><br><br>
+            <label for="loanNumber">Loan Number:</label>
+            <input type="text" id="loanNumber" name="loanNumber" required><br><br>
+            <label for="loanTermYears">Loan Term Years:</label>
+            <input type="number" id="loanTermYears" name="loanTermYears" required><br><br>
+            <label for="Amount">Amount:</label>
+            <input type="number" id="Amount" name="Amount" required><br><br>
+            <label for="interestRate">Interest Rate:</label>
+            <input type="number" id="interestRate" name="interestRate" step="0.01" required><br><br>
+            <input class="card__sub-heading" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'Create New Loan', body: content }) %>

@@ -1,0 +1,46 @@
+<!-- 
+  Author: Anthony Schultz
+  Date: 4/28/23
+  Description: This file defines the "My Loan Lists" page, which displays a table of loans
+  associated with the current user. The table includes details such as loan type, loan number,
+  amount, interest rate, loan term, and calculated loan amount. If no loans are found, a message
+  is displayed indicating that no loans were found.
+-->
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">My Loan Lists</h1>
+  <table class="table-header">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Loan Type</th>
+        <th scope="col">Loan Number</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Interest Rate/%</th>
+        <th scope="col">Loan Term Years</th>
+        <th scope="col">Calculated Loan Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      ` + (loans && loans.length > 0 ? loans.map(loan => `
+        <tr class="table-secondary">
+          <td>${loan.name}</td>
+          <td>${loan.loanType}</td>
+          <td>${loan.loanNumber}</td>
+          <td>${loan.Amount}</td>
+          <td>${Math.round(loan.interestRate * 100)}</td>
+          <td>${loan.loanTermYears}</td>
+          <td>${loan.calculatedLoanAmount}</td>
+        </tr>
+      `).join('') : `
+        <tr>
+          <td colspan="7" class="text-center">No loans found.</td>
+        </tr>
+      `) + `
+    </tbody>
+    
+  </table>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'My Loan Lists', body: content }) %>

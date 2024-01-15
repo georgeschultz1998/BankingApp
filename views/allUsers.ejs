@@ -1,0 +1,36 @@
+<!-- 
+  Author: Anthony Schultz
+  Date: 4/28/23
+  Description: This file defines the "User List" page, which displays a table of users
+  in the system. The table includes details such as name, email, and role. If no users
+  are found, a message is displayed indicating that no users were found.
+-->
+<% var content = `
+<div class="container">
+  <h1 class="heading-primary">User List</h1>
+  <table class="table-header">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      ` + (users && users.length > 0 ? users.map(user => `
+        <tr class="table-secondary">
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+        </tr>
+      `).join('') : `
+        <tr>
+          <td colspan="3" class="text-center">No users found.</td>
+        </tr>
+      `) + `
+    </tbody>
+  </table>
+</div>
+` %>
+
+<%- include('layout.ejs', { title: 'User List', body: content }) %>
